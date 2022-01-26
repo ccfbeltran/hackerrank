@@ -1,45 +1,29 @@
-def countOccurrences(str, word):
- 
-    wordslist = list(str.split())
-    return wordslist.count(word)
 
 def minion_game(string):
-    #Get a list of list with index and letter
-    list_organizer= list(enumerate(string))
-
-    list_index_vowels=[]
-    list_index_consonants=[]
-    print(list_organizer)
-    max_len_string= len(string)
-
-#all possible words we have to use
-    list_possible_word_vowels=[]
-    list_possible_word_consonants=[]
-
-    for it in list_organizer:
-        if it[1] in  "AEIOU":
-            list_index_vowels.append(it[0])
-        elif it[1] not in "AEIOU":
-            list_index_consonants.append(it[0])
-
-    print(list_index_consonants)
-    print(list_index_vowels)
-
-    for beggin in list_index_consonants:
-        for end in range(beggin+1, max_len_string+1):
-            list_possible_word_consonants.append(string[beggin:end])
-    #remove duplicate things of all the possible words
-    list_possible_word_consonants=list(dict.fromkeys(list_possible_word_consonants))
-    print(list_possible_word_consonants)
-
-    for beggin in list_index_vowels:
-        for end in range(beggin+1, max_len_string+1):
-            list_possible_word_vowels.append(string[beggin:end])
-
-    list_possible_word_vowels=list(dict.fromkeys(list_possible_word_vowels))
-    print(list_possible_word_vowels)
-
+    stuar_points_consonant=0
+    kevin_points_vowels=0
+   
+    for it in range(len(string)):
+        if string[it] in "AEIOU":
+           kevin_points_vowels+=  len(string)-it
+        else:
+            stuar_points_consonant+= len(string)-it
+        
+        
+        
+           
+        
+        
+    if kevin_points_vowels< stuar_points_consonant:
+        print("Stuart " + str(stuar_points_consonant))
+    elif stuar_points_consonant< kevin_points_vowels:
+        print("Kevin " + str(kevin_points_vowels))
+    elif stuar_points_consonant== kevin_points_vowels:
+        print("Draw")    
+    else: 
+        print("Draw")    
+    
+   
 if __name__ == '__main__':
-    #s = input()
-    s="BANANA"
+    s = input()
     minion_game(s)
