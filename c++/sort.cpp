@@ -8,7 +8,7 @@
 using namespace std;
 
 
-int main() {
+int sort() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     int size;
     string numbers;
