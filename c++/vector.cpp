@@ -6,7 +6,7 @@
 using namespace std;
 
 
-int vector_test() {
+int vector() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     int myints[] = {16,2,77,29};
 
@@ -21,6 +21,6 @@ int vector_test() {
 
     for (auto o:v)
         cout<<o<<endl;
-
+    cout<< v[4];
     return 0;
 }

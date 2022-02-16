@@ -144,7 +144,7 @@ void check2()
 	}
 }
 
-int main()
+int box()
 {
 	check2();
 }

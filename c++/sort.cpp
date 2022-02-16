@@ -11,24 +11,21 @@ using namespace std;
 int sort() {
     /* Enter your code here. Read input from STDIN. Print output to STDOUT */   
     int size;
-    string numbers;
+    int number_entered;
+    vector<int>* vect_oper=new vector<int>;
     
     cin>>size;
-    //on ingnore pour la prochaine ligne d'une taille de 10*1e9 jusqu'au trouver la prochaine ligne
-    cin.ignore(10*1e9,'\n');
-    getline(cin, numbers);
+    for(int iter=0; iter<size;iter++)
+    {   
+        cin>>number_entered;
+        vect_oper->push_back(number_entered);
+    }
 
-    stringstream numbers_stream(numbers);
-    
-    auto start=istream_iterator<int>{numbers_stream};
-    auto end=istream_iterator<int>{};
+    sort(vect_oper->begin(),vect_oper->end());
 
-    vector<int> numbers_vect(start,end);
-        
-    sort(numbers_vect.begin(),numbers_vect.end()); 
-
-    for(auto itr:numbers_vect)
-        cout<<itr<<" ";
-        
+    for(auto o:*vect_oper)
+    cout<<o<<" ";
+ 
+    free(vect_oper);    
 
 }
